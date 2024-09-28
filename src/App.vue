@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper">
-    <hero-views />
-    <footer-component />
+    <HeroView />
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HeroViews from "@/views/HeroViews.vue";
+import HeroView from "@/views/HeroView.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 
 export default {
-  components: { HeroViews, FooterComponent },
+  components: { HeroView, FooterComponent },
 };
 </script>
