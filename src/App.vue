@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <router-view></router-view>
-    <footer-component />
+    <RouterView />
+    <FooterComponent />
   </div>
 </template>
 
