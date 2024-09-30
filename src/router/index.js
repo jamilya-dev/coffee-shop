@@ -6,6 +6,7 @@ import OurCoffeeView from '../views/OurCoffeeView.vue';
 import PleasureView from '../views/PleasureView.vue';
 import ContactsView from '../views/ContactsView.vue';
 import ThankYouView from '../views/ThankYouView.vue';
+import ItemPageView from '../views/ItemPageView.vue';
 
 Vue.use(VueRouter);
 

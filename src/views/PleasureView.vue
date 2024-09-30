@@ -49,41 +49,65 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <div class="shop__item">
-                <img src="@/assets/img/good-1.jpg" alt="coffee" />
-                <div class="shop__item-title">Solimo Coffee Beans 2kg</div>
-                <div class="shop__item-country">Brazil</div>
-                <div class="shop__item-price">10.73$</div>
+                <img
+                  :src="require(`@/assets/img/${products[0].img}`)"
+                  alt="coffee"
+                />
+                <div class="shop__item-title">{{ products[0].title }}</div>
+                <div class="shop__item-country">{{ products[0].maker }}</div>
+                <div class="shop__item-price">{{ products[0].price }}</div>
               </div>
               <div class="shop__item">
-                <img src="@/assets/img/good-1.jpg" alt="coffee" />
-                <div class="shop__item-title">Presto Coffee Beans 1kg</div>
-                <div class="shop__item-country">Brazil</div>
-                <div class="shop__item-price">15.99$</div>
+                <img
+                  :src="require(`@/assets/img/${products[1].img}`)"
+                  alt="coffee"
+                />
+                <div class="shop__item-title">{{ products[1].title }}</div>
+                <div class="shop__item-country">{{ products[1].maker }}</div>
+                <div class="shop__item-price">{{ products[1].price }}</div>
               </div>
               <div class="shop__item">
-                <img src="@/assets/img/good-1.jpg" alt="coffee" />
-                <div class="shop__item-title">AROMISTICO Coffee 1kg</div>
-                <div class="shop__item-country">Brazil</div>
-                <div class="shop__item-price">6.99$</div>
+                <img
+                  :src="require(`@/assets/img/${products[2].img}`)"
+                  alt="coffee"
+                />
+                <div class="shop__item-title">{{ products[2].title }}</div>
+                <div class="shop__item-country">{{ products[2].maker }}</div>
+                <div class="shop__item-price">{{ products[2].price }}</div>
               </div>
               <div class="shop__item">
-                <img src="@/assets/img/good-1.jpg" alt="coffee" />
-                <div class="shop__item-title">Solimo Coffee Beans 2kg</div>
-                <div class="shop__item-country">Brazil</div>
-                <div class="shop__item-price">10.73$</div>
+                <img
+                  :src="require(`@/assets/img/${products[3].img}`)"
+                  alt="coffee"
+                />
+                <div class="shop__item-title">{{ products[3].title }}</div>
+                <div class="shop__item-country">{{ products[3].maker }}</div>
+                <div class="shop__item-price">{{ products[3].price }}</div>
               </div>
               <div class="shop__item">
-                <img src="@/assets/img/good-1.jpg" alt="coffee" />
-                <div class="shop__item-title">Solimo Coffee Beans 2kg</div>
-                <div class="shop__item-country">Brazil</div>
-                <div class="shop__item-price">10.73$</div>
+                <img
+                  :src="require(`@/assets/img/${products[4].img}`)"
+                  alt="coffee"
+                />
+                <div class="shop__item-title">{{ products[4].title }}</div>
+                <div class="shop__item-country">{{ products[4].maker }}</div>
+                <div class="shop__item-price">{{ products[4].price }}</div>
               </div>
               <div class="shop__item">
-                <img src="@/assets/img/good-1.jpg" alt="coffee" />
-                <div class="shop__item-title">Solimo Coffee Beans 2kg</div>
-                <div class="shop__item-country">Brazil</div>
-                <div class="shop__item-price">10.73$</div>
+                <img
+                  :src="require(`@/assets/img/${products[5].img}`)"
+                  alt="coffee"
+                />
+                <div class="shop__item-title">{{ products[5].title }}</div>
+                <div class="shop__item-country">{{ products[5].maker }}</div>
+                <div class="shop__item-price">{{ products[5].price }}</div>
               </div>
+              <!-- <ProductCatdComponent />
+              <ProductCatdComponent />
+              <ProductCatdComponent />
+              <ProductCatdComponent />
+              <ProductCatdComponent />
+              <ProductCatdComponent /> -->
             </div>
           </div>
         </div>
@@ -94,8 +118,58 @@
 
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
+// import ProductCatdComponent from "@/components/ProductCatdComponent.vue";
 
 export default {
   components: { NavBarComponent },
+
+  data() {
+    return {
+      products: [
+        {
+          id: 0,
+          img: "good-1.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          price: "10.73$",
+          maker: "Brazil",
+        },
+        {
+          id: 1,
+          img: "good-1.jpg",
+          title: "Presto Coffee Beans 1kg",
+          price: "15.99$",
+          maker: "Brazil",
+        },
+        {
+          id: 2,
+          img: "good-1.jpg",
+          title: "AROMISTICO Coffee 1kg",
+          price: "6.99$",
+          maker: "Brazil",
+        },
+        {
+          id: 3,
+          img: "good-1.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          price: "10.73$",
+          maker: "Brazil",
+        },
+        {
+          id: 4,
+          img: "good-1.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          price: "10.73$",
+          maker: "Brazil",
+        },
+        {
+          id: 5,
+          img: "good-1.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          price: "10.73$",
+          maker: "Brazil",
+        },
+      ],
+    };
+  },
 };
 </script>
