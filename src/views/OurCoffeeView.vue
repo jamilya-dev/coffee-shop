@@ -71,39 +71,11 @@
             <div class="shop__wrapper">
               <ProductCatdComponent
                 classItem="shop__item"
-                :name="products[0].title"
-                :price="products[0].price"
-                :image="products[0].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="products[1].title"
-                :price="products[1].price"
-                :image="products[1].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="products[2].title"
-                :price="products[2].price"
-                :image="products[2].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="products[3].title"
-                :price="products[3].price"
-                :image="products[3].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="products[4].title"
-                :price="products[4].price"
-                :image="products[4].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="products[5].title"
-                :price="products[5].price"
-                :image="products[5].img"
+                v-for="product in products"
+                :key="product.id"
+                :name="product.title"
+                :price="product.price"
+                :image="product.img"
               />
             </div>
           </div>

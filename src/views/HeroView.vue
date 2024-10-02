@@ -60,23 +60,13 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
               <ProductCatdComponent
+                v-for="bestseller in bestsellers"
+                :key="bestseller.id"
                 classItem="best__item"
-                :name="bestsellers[0].title"
-                :price="bestsellers[0].price"
-                :image="bestsellers[0].img"
-              />
-              <ProductCatdComponent
-                classItem="best__item"
-                :name="bestsellers[1].title"
-                :price="bestsellers[1].price"
-                :image="bestsellers[1].img"
-              />
-              <ProductCatdComponent
-                classItem="best__item"
-                :name="bestsellers[2].title"
-                :price="bestsellers[2].price"
-                :image="bestsellers[2].img"
-              />
+                :name="bestseller.title"
+                :price="bestseller.price"
+                :image="bestseller.img"
+              ></ProductCatdComponent>
             </div>
           </div>
         </div>

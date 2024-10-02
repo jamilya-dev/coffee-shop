@@ -49,40 +49,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <ProductCatdComponent
+                v-for="good in goods"
+                :key="good.id"
                 classItem="shop__item"
-                :name="goods[0].title"
-                :price="goods[0].price"
-                :image="goods[0].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="goods[1].title"
-                :price="goods[1].price"
-                :image="goods[1].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="goods[2].title"
-                :price="goods[2].price"
-                :image="goods[2].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="goods[3].title"
-                :price="goods[3].price"
-                :image="goods[3].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="goods[4].title"
-                :price="goods[4].price"
-                :image="goods[4].img"
-              />
-              <ProductCatdComponent
-                classItem="shop__item"
-                :name="goods[5].title"
-                :price="goods[5].price"
-                :image="goods[5].img"
+                :name="good.title"
+                :price="good.price"
+                :image="good.img"
               />
             </div>
           </div>
