@@ -7,7 +7,7 @@
             <NavBarComponent />
           </div>
         </div>
-        <h1 class="title-big">Our Coffee</h1>
+        <PageTitleComponent :title="title" />
       </div>
     </div>
     <section class="shop">
@@ -69,66 +69,42 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <div class="shop__item">
-                <img
-                  :src="require(`@/assets/img/${products[0].img}`)"
-                  alt="coffee"
-                />
-                <div class="shop__item-title">{{ products[0].title }}</div>
-                <div class="shop__item-country">{{ products[0].maker }}</div>
-                <div class="shop__item-price">{{ products[0].price }}</div>
-              </div>
-              <div class="shop__item">
-                <img
-                  :src="require(`@/assets/img/${products[1].img}`)"
-                  alt="coffee"
-                />
-                <div class="shop__item-title">{{ products[1].title }}</div>
-                <div class="shop__item-country">{{ products[1].maker }}</div>
-                <div class="shop__item-price">{{ products[1].price }}</div>
-              </div>
-              <div class="shop__item">
-                <img
-                  :src="require(`@/assets/img/${products[2].img}`)"
-                  alt="coffee"
-                />
-                <div class="shop__item-title">{{ products[2].title }}</div>
-                <div class="shop__item-country">{{ products[2].maker }}</div>
-                <div class="shop__item-price">{{ products[2].price }}</div>
-              </div>
-              <div class="shop__item">
-                <img
-                  :src="require(`@/assets/img/${products[3].img}`)"
-                  alt="coffee"
-                />
-                <div class="shop__item-title">{{ products[3].title }}</div>
-                <div class="shop__item-country">{{ products[3].maker }}</div>
-                <div class="shop__item-price">{{ products[3].price }}</div>
-              </div>
-              <div class="shop__item">
-                <img
-                  :src="require(`@/assets/img/${products[4].img}`)"
-                  alt="coffee"
-                />
-                <div class="shop__item-title">{{ products[4].title }}</div>
-                <div class="shop__item-country">{{ products[4].maker }}</div>
-                <div class="shop__item-price">{{ products[4].price }}</div>
-              </div>
-              <div class="shop__item">
-                <img
-                  :src="require(`@/assets/img/${products[5].img}`)"
-                  alt="coffee"
-                />
-                <div class="shop__item-title">{{ products[5].title }}</div>
-                <div class="shop__item-country">{{ products[5].maker }}</div>
-                <div class="shop__item-price">{{ products[5].price }}</div>
-              </div>
-              <!-- <ProductCatdComponent />
-              <ProductCatdComponent />
-              <ProductCatdComponent />
-              <ProductCatdComponent />
-              <ProductCatdComponent />
-              <ProductCatdComponent /> -->
+              <ProductCatdComponent
+                classItem="shop__item"
+                :name="products[0].title"
+                :price="products[0].price"
+                :image="products[0].img"
+              />
+              <ProductCatdComponent
+                classItem="shop__item"
+                :name="products[1].title"
+                :price="products[1].price"
+                :image="products[1].img"
+              />
+              <ProductCatdComponent
+                classItem="shop__item"
+                :name="products[2].title"
+                :price="products[2].price"
+                :image="products[2].img"
+              />
+              <ProductCatdComponent
+                classItem="shop__item"
+                :name="products[3].title"
+                :price="products[3].price"
+                :image="products[3].img"
+              />
+              <ProductCatdComponent
+                classItem="shop__item"
+                :name="products[4].title"
+                :price="products[4].price"
+                :image="products[4].img"
+              />
+              <ProductCatdComponent
+                classItem="shop__item"
+                :name="products[5].title"
+                :price="products[5].price"
+                :image="products[5].img"
+              />
             </div>
           </div>
         </div>
@@ -139,53 +115,56 @@
 
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
+import ProductCatdComponent from "@/components/ProductCatdComponent.vue";
+import PageTitleComponent from "@/components/PageTitleComponent.vue";
 
 export default {
-  components: { NavBarComponent },
+  components: { NavBarComponent, ProductCatdComponent, PageTitleComponent },
 
   data() {
     return {
+      title: "Our Coffee",
       products: [
         {
           id: 0,
           img: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           maker: "Brazil",
         },
         {
           id: 1,
-          img: "coffee-2.jpg",
+          img: "coffee-3.jpg",
           title: "Presto Coffee Beans 1kg",
-          price: "15.99$",
+          price: 15.99,
           maker: "Brazil",
         },
         {
           id: 2,
           img: "coffee-3.jpg",
           title: "AROMISTICO Coffee 1kg",
-          price: "6.99$",
+          price: 6.99,
           maker: "Brazil",
         },
         {
           id: 3,
           img: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           maker: "Brazil",
         },
         {
           id: 4,
           img: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           maker: "Brazil",
         },
         {
           id: 5,
           img: "coffee-3.jpg",
           title: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
           maker: "Brazil",
         },
       ],

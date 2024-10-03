@@ -11,15 +11,21 @@
                   :alt="links[0].icon"
               /></router-link>
             </li>
-            <li class="footer__item">
-              <router-link :to="links[1].link">{{ links[1].text }}</router-link>
-            </li>
-            <li class="footer__item">
-              <router-link :to="links[2].link">{{ links[2].text }}</router-link>
-            </li>
-            <li class="footer__item">
-              <router-link :to="links[3].link">{{ links[3].text }}</router-link>
-            </li>
+            <NavLinksComponent
+              :text="links[1].text"
+              :link="links[1].link"
+              classLink="footer__item"
+            />
+            <NavLinksComponent
+              :text="links[2].text"
+              :link="links[2].link"
+              classLink="footer__item"
+            />
+            <NavLinksComponent
+              :text="links[3].text"
+              :link="links[3].link"
+              classLink="footer__item"
+            />
           </ul>
         </div>
       </div>
@@ -33,7 +39,10 @@
 </template>
 
 <script>
+import NavLinksComponent from "@/components/NavLinksComponent.vue";
+
 export default {
+  components: { NavLinksComponent },
   data() {
     return {
       links: [

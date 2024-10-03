@@ -9,7 +9,7 @@
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <h1 class="title-big">Everything You Love About Coffee</h1>
+            <PageTitleComponent :title="title" />
             <img
               class="beanslogo"
               src="@/assets/logo/Beans_logo.svg"
@@ -58,7 +58,26 @@
         <div class="title">Our best</div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <ProductCatdComponent />
+            <div class="best__wrapper">
+              <ProductCatdComponent
+                classItem="best__item"
+                :name="bestsellers[0].title"
+                :price="bestsellers[0].price"
+                :image="bestsellers[0].img"
+              />
+              <ProductCatdComponent
+                classItem="best__item"
+                :name="bestsellers[1].title"
+                :price="bestsellers[1].price"
+                :image="bestsellers[1].img"
+              />
+              <ProductCatdComponent
+                classItem="best__item"
+                :name="bestsellers[2].title"
+                :price="bestsellers[2].price"
+                :image="bestsellers[2].img"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -69,8 +88,34 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import ProductCatdComponent from "@/components/ProductCatdComponent.vue";
+import PageTitleComponent from "@/components/PageTitleComponent.vue";
 
 export default {
-  components: { NavBarComponent, ProductCatdComponent },
+  components: { NavBarComponent, ProductCatdComponent, PageTitleComponent },
+  data() {
+    return {
+      title: "Everything You Love About Coffee",
+      bestsellers: [
+        {
+          id: 0,
+          img: "coffee-1.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          price: 10.73,
+        },
+        {
+          id: 1,
+          img: "coffee-2.jpg",
+          title: "Presto Coffee Beans 1kg",
+          price: 15.99,
+        },
+        {
+          id: 2,
+          img: "coffee-3.jpg",
+          title: "AROMISTICO Coffee 1kg",
+          price: 6.99,
+        },
+      ],
+    };
+  },
 };
 </script>
