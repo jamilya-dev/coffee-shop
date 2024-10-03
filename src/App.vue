@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <HeroView />
+    <RouterView />
     <FooterComponent />
   </div>
 </template>
