@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import GoodsItemVievs from '../views/ItemPageView.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -24,6 +26,8 @@ const routes = [
     path: '/thanks',
     component: () => import('../views/ThankYouView.vue'),
   },
+  { name: 'coffee', path: '/our-coffee/:id', component: GoodsItemVievs },
+  { name: 'goods', path: '/pleasure/:id', component: GoodsItemVievs },
 ];
 
 const router = new VueRouter({

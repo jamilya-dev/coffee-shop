@@ -71,11 +71,10 @@
             <div class="shop__wrapper">
               <ProductCatdComponent
                 classItem="shop__item"
-                v-for="product in products"
-                :key="product.id"
-                :name="product.title"
-                :price="product.price"
-                :image="product.img"
+                v-for="card in products"
+                :key="card.id"
+                :card="card"
+                @onNavigate="navigate"
               />
             </div>
           </div>
@@ -90,56 +89,15 @@ import NavBarComponent from "@/components/NavBarComponent.vue";
 import ProductCatdComponent from "@/components/ProductCatdComponent.vue";
 import PageTitleComponent from "@/components/PageTitleComponent.vue";
 
+import { navigate } from "../mixins/navigate";
+
 export default {
   components: { NavBarComponent, ProductCatdComponent, PageTitleComponent },
 
   data() {
     return {
       title: "Our Coffee",
-      // products: [
-      //   {
-      //     id: 0,
-      //     img: "coffee-3.jpg",
-      //     title: "Solimo Coffee Beans 2kg",
-      //     price: 10.73,
-      //     maker: "Brazil",
-      //   },
-      //   {
-      //     id: 1,
-      //     img: "coffee-3.jpg",
-      //     title: "Presto Coffee Beans 1kg",
-      //     price: 15.99,
-      //     maker: "Brazil",
-      //   },
-      //   {
-      //     id: 2,
-      //     img: "coffee-3.jpg",
-      //     title: "AROMISTICO Coffee 1kg",
-      //     price: 6.99,
-      //     maker: "Brazil",
-      //   },
-      //   {
-      //     id: 3,
-      //     img: "coffee-3.jpg",
-      //     title: "Solimo Coffee Beans 2kg",
-      //     price: 10.73,
-      //     maker: "Brazil",
-      //   },
-      //   {
-      //     id: 4,
-      //     img: "coffee-3.jpg",
-      //     title: "Solimo Coffee Beans 2kg",
-      //     price: 10.73,
-      //     maker: "Brazil",
-      //   },
-      //   {
-      //     id: 5,
-      //     img: "coffee-3.jpg",
-      //     title: "Solimo Coffee Beans 2kg",
-      //     price: 10.73,
-      //     maker: "Brazil",
-      //   },
-      // ],
+      name: "coffee",
     };
   },
   computed: {
@@ -147,5 +105,6 @@ export default {
       return this.$store.getters["getProducts"];
     },
   },
+  mixins: [navigate],
 };
 </script>

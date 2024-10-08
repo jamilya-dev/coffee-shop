@@ -66,12 +66,10 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
               <ProductCatdComponent
-                v-for="bestseller in bestsellers"
-                :key="bestseller.id"
                 classItem="best__item"
-                :name="bestseller.title"
-                :price="bestseller.price"
-                :image="bestseller.img"
+                v-for="card in bestsellers"
+                :key="card.id"
+                :card="card"
               ></ProductCatdComponent>
             </div>
           </div>
@@ -109,4 +107,4 @@ export default {
     },
   },
 };
-</script>
+</script> 

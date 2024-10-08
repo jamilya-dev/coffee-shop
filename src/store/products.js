@@ -49,6 +49,11 @@ const products = {
     getProducts(state) {
       return state.products;
     },
+    getProductById(state) {
+      return (id) => {
+        return state.products.find((card) => card.id === +id);
+      };
+    },
   },
 };
 export default products;
