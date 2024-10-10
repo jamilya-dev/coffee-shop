@@ -93,6 +93,13 @@ export default {
       title: "Everything You Love About Coffee",
     };
   },
+  mounted() {
+    fetch("http://localhost:3000/bestsellers")
+      .then((res) => res.json())
+      .then((data) => {
+        this.$store.dispatch("setBestsellersData", data);
+      });
+  },
   computed: {
     bestsellers() {
       return this.$store.getters["getBest"];

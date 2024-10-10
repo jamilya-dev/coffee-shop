@@ -71,7 +71,7 @@
             <div class="shop__wrapper">
               <ProductCatdComponent
                 classItem="shop__item"
-                v-for="card in products"
+                v-for="card in coffee"
                 :key="card.id"
                 :card="card"
                 @onNavigate="navigate"
@@ -101,10 +101,17 @@ export default {
     };
   },
   computed: {
-    products() {
-      return this.$store.getters["getProducts"];
+    coffee() {
+      return this.$store.getters["getCoffee"];
     },
   },
   mixins: [navigate],
+  mounted() {
+    fetch("http://localhost:3000/coffee")
+      .then((res) => res.json())
+      .then((data) => {
+        this.$store.dispatch("setCoffeeData", data);
+      });
+  },
 };
 </script>
