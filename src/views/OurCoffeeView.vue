@@ -59,7 +59,7 @@
           </div>
           <div class="col-lg-4">
             <div class="shop__filter">
-              <div class="shop__filter-label">Or filter</div>
+              <div class="shop__filter-label" @click="reset()">Or filter</div>
               <div class="shop__filter-group">
                 <button class="shop__filter-btn" @click="onSort('Brazil')">
                   Brazil
@@ -141,6 +141,14 @@ export default {
         .then((data) => {
           console.log(data);
           this.$store.dispatch("setCoffeeData", data);
+        });
+    },
+    reset() {
+      fetch("http://localhost:3000/coffee")
+        .then((res) => res.json())
+        .then((data) => {
+          this.$store.dispatch("setCoffeeData", data);
+          this.isDirectives = false;
         });
     },
   },
